@@ -43,4 +43,22 @@ button {
 
 ul {
   list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.edit {
+  background-color: blue;
+  border: 1px solid blue;
+  margin-bottom: 5px;
+}
+
+.delete {
+  background-color: red;
+  border: 1px solid red;
 }/*# sourceMappingURL=style.css.map */
