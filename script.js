@@ -26,7 +26,26 @@ $(document).ready(function () {
 
    $('#todo-list').on('click', '.delete', function () {
     $(this).closest('li').remove();
-});
+    });
+
+        $('#todo-list').on('click', '.edit', function () {
+        const li = $(this).parent();
+        const span = li.find('span');
+
+        if ($(this).text() === 'Edit') {
+            const input = $('<input type="text">').val(span.text());
+            span.replaceWith(input);
+            $(this).text('Save');
+        } else { // Save
+            const input = li.find('input');
+            const newText = input.val().trim();
+            if (newText) {
+                const newSpan = $('<span></span>').text(newText);
+                input.replaceWith(newSpan);
+                $(this).text('Edit');
+            }
+        }
+    });
 
     
 })
