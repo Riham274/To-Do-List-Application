@@ -16,6 +16,7 @@ $(document).ready(function () {
         addItem(initialItems[i])
     }
 
+    //submit
     $('#add-form').submit(function (e){
         e.preventDefault();
         const newItem = $('#new-item').val();
@@ -24,28 +25,28 @@ $(document).ready(function () {
         }
     });
 
+   //delete 
    $('#todo-list').on('click', '.delete', function () {
     $(this).closest('li').remove();
     });
 
-        $('#todo-list').on('click', '.edit', function () {
-        const li = $(this).parent();
-        const span = li.find('span');
-
-        if ($(this).text() === 'Edit') {
-            const input = $('<input type="text">').val(span.text());
-            span.replaceWith(input);
-            $(this).text('Save');
-        } else { // Save
-            const input = li.find('input');
-            const newText = input.val().trim();
-            if (newText) {
-                const newSpan = $('<span></span>').text(newText);
-                input.replaceWith(newSpan);
-                $(this).text('Edit');
+    //edit
+    $('#todo-list').on('click', '.edit', function () {
+      const $btn = $(this);
+      const $li = $btn.parent();
+    
+      if ($btn.text() === 'Edit') {
+         const currentText = $li.find('span').text();
+         $li.find('span').replaceWith(`<input type="text" value="${currentText}">`);
+         $btn.text('Save');
+        } 
+       
+      else {
+        const newText = $li.find('input').val();
+        if (newText) {
+            $li.find('input').replaceWith(`<span>${newText}</span>`);
+            $btn.text('Edit');
             }
         }
     });
-
-    
-})
+ });
