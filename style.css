@@ -1,14 +1,16 @@
 body {
   font-family: "Times New Roman", Times, serif;
   background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  padding: 15px;
-  background-color: white;
+  background-color: #fff;
   width: 400px;
-  margin: auto;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 h1 {
@@ -16,49 +18,57 @@ h1 {
 }
 
 form {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-
-input {
+form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   font-family: "Times New Roman", Times, serif;
-  border-radius: 5px;
-  border: 1px solid gray;
-  height: 23px;
-  width: 300px;
-  padding: 3px;
-  font-size: 15px;
+  font-size: 16px;
 }
-
-button {
+form button {
   font-family: "Times New Roman", Times, serif;
-  height: 30px;
-  border: 1px solid green;
-  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 17px;
+  border: none;
+  border-radius: 6px;
   background-color: green;
   color: white;
-  width: 60px;
-  font-size: 15px;
   cursor: pointer;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
-
-li {
+ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 5px;
   margin-bottom: 10px;
-  border-bottom: 1px solid rgb(219, 219, 219);
+  border-bottom: 2px solid #dfdfdf;
 }
-
-.edit {
-  background-color: blue;
-  border: 1px solid blue;
-  margin-bottom: 5px;
+ul li span {
+  flex: 1;
 }
-
-.delete {
-  background-color: red;
-  border: 1px solid red;
+ul li button {
+  font-family: "Times New Roman", Times, serif;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+}
+ul li button.edit {
+  background-color: rgb(0, 115, 255);
+  margin-right: 7px;
+}
+ul li button.delete {
+  background-color: rgb(252, 12, 12);
 }/*# sourceMappingURL=style.css.map */
